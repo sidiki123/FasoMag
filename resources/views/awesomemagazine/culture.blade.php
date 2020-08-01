@@ -24,7 +24,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="section-tittle mb-35">
-                            <h2>Top Posts -- Politique</h2>
+                            <h2>Top Posts -- Culture</h2>
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                         </div>
                         @endforeach
                         <!-- single-job-content -->
-                       
+                      
                     </div>
                     <div class="col-lg-3 col-md-3">
                         <div class="google-add mb-40">

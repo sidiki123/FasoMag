@@ -92,10 +92,10 @@
                                     <nav>                                                
                                         <ul id="navigation">                                                                                                                                     
                                             <li><a href="{{URL('category/politique')}}">Politique</a></li>
-                                            <li><a href="{{URL('category/elements')}}">Economie</a></li>
-                                            <li><a href="{{URL('blog_details')}}">Société</a></li>
-                                            <li><a href="{{URL('sin-up')}}">Coopération</a></li>
-                                            <li><a href="{{URL('blog')}}">Culture</a></li>
+                                            <li><a href="{{URL('category/economie')}}">Economie</a></li>
+                                            <li><a href="{{URL('category/societe')}}">Société</a></li>
+                                            <li><a href="{{URL('category/cooperation')}}">Coopération</a></li>
+                                            <li><a href="{{URL('category/culture')}}">Culture</a></li>
                                             <!-- <li><a href="category.html">Harmful</a></li>
                                             <li><a href="category.html">Technology</a></li>
                                             <li><a href="category.html">Travel</a></li>

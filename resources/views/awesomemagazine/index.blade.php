@@ -20,7 +20,7 @@
                                         <img src="{{$selectedNews['urlToImage']}}" alt=""/>
                                 </div>
                                 <div class="banner-cap">
-                                    <p>Trending</p>
+                                    <p>Actualités internationales</p>
                                     <a href="{{$selectedNews['url']}}"
                                     target="_blank">  <h1>{{$selectedNews['title']}}</h1> </a>
                                 </div>
