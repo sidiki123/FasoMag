@@ -2,127 +2,39 @@
     <main>
 
 
-            <table class="table">
-                            
-                    <thead>
-                        <tr>
-                            <th>idActualities</th>
-                            <th>Titre</th>
-                            <th>Descriptions</th>
-                            <th>Images</th>
-                            <th>Categorie</th>
-                            <th>Publication</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($actualities as $actuality)
-                        <tr>
-                            <td>{{$actuality->idActualities}}</td>
-                            <td>{{$actuality->titre}}</td>
-                            <td>{{$actuality->description}}</td>
-                            {{-- <img class="images" id="image" src="{{ $actuality->image }}" /> --}}
-                           <td> <img src="{{ asset('storage/'.$actuality->image) }}" alt="..."> </td>
-                            {{-- <td>{{$actuality->image}}</td> --}}
-                            <td>{{$actuality->actuality_cat->categorie}}</td>
-
-                            <td>{{$actuality->publication}}</td>
-                        </tr>
-                        
-                        @endforeach
-                    </tbody>
-                </table>
 
                 
         <!-- Banner News Area Start -->
         <div class="banner-news">
             <div class="container-fluid p-0">
                 <div class="banner-slider-active no-gutters ">
+                 
+                            @foreach($news as $selectedNews)
+                
+                            <div id="appendDivNews">
+                                    <div id="news">
                     <div class="single-sliders">
                         <div class="single-baner-nw mb-30 text-center">
                             <div class="banner-img-cap">
                                 <div class="banner-img">
-                                    <img src="assets/img/gallery/banner-cap1.png" alt="">
-                                    <!--video iocn -->
-                                    <div class="video-icon">
-                                            <a class="popup-video btn-icon" href="https://www.youtube.com/watch?v=up68UAfH0d0" data-animation="bounceIn" data-delay=".4s"><i class="fas fa-play"></i></a> <br>
-
-                                  <br><br>  <p style="color:white;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum enim optio dignissimos repudiandae </p>
+                                        <img src="{{$selectedNews['urlToImage']}}" alt=""/>
+                                </div>
+                                <div class="banner-cap">
+                                    <p>Trending</p>
+                                    <a href="{{$selectedNews['url']}}"
+                                    target="_blank">  <h1>{{$selectedNews['title']}}</h1> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                                     </div>
-                                </div>
-                                <div class="banner-cap">
-                                    <p>Trending</p>
-                                    <h3><a href="#">Calling time on irresponsible junk food advertising to children</a></h3>
-                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="single-sliders">
-                        <div class="single-baner-nw mb-30 text-center">
-                            <div class="banner-img-cap">
-                                <div class="banner-img">
-                                    <img src="assets/img/gallery/banner-cap2.png" alt="">
-                                </div>
-                                <div class="banner-cap">
-                                    <p>Trending</p>
-                                   <h3><a href="post_details.html">The pomelo case: scope of plant variety rights in China</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-sliders">
-                        <div class="single-baner-nw mb-30 text-center">
-                            <div class="banner-img-cap">
-                                <div class="banner-img">
-                                    <img src="assets/img/gallery/banner-cap3.png" alt="">
-                                    <!--video iocn -->
-                                    <div class="video-icon">
-                                        <a class="popup-video btn-icon" href="https://www.youtube.com/watch?v=up68UAfH0d0" data-animation="bounceIn" data-delay=".4s"><i class="fas fa-play"></i></a>
-                                        <br><br>  <p style="color:white;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum enim optio dignissimos repudiandae </p>
-                                   
-                                    </div>
-                                </div>
-                                <div class="banner-cap">
-                                    <p>Trending</p>
-                                    <h3><a href="#">Valuable lessons to take away from COVID-19</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-sliders">
-                        <div class="single-baner-nw mb-30 text-center">
-                            <div class="banner-img-cap">
-                                <div class="banner-img">
-                                    <img src="assets/img/gallery/banner-cap4.png" alt="">
-                                </div>
-                                <div class="banner-cap">
-                                    <p>Trending</p>
-                                    <h3><a href="#">Building on consumer preferences shaped by the pandemic</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-sliders">
-                        <div class="single-baner-nw mb-30 text-center">
-                            <div class="banner-img-cap">
-                                <div class="banner-img">
-                                    <img src="assets/img/gallery/banner-cap2.png" alt="">
-                                    <!--video iocn -->
-                                    <div class="video-icon">
-                                        <a class="popup-video btn-icon" href="https://www.youtube.com/watch?v=up68UAfH0d0" data-animation="bounceIn" data-delay=".4s"><i class="fas fa-play"></i></a>
-                                        <br><br>  <p style="color:white;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum enim optio dignissimos repudiandae </p>
-                                   
-                                    </div>
-                                </div>
-                                <div class="banner-cap">
-                                    <p>Trending</p>
-                                    <h3><a href="#">Building on consumer preferences shaped by the pandemic</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            @endforeach
+                    
+            </div>
             </div>
         </div>
+        
         <!-- Banner News Area End -->
         <!-- Latest Posts Area -->
         <div class="latest-posts pt-80 pb-80">
@@ -130,113 +42,52 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="section-tittle mb-35">
-                            <h2>Latest Posts</h2>
+                            <h2>Actualités Nationales</h2>
                         </div>
                     </div>
                 </div>
                 <!-- Slider -->
                 <div class="row">
+                        @foreach($actualities  as $actuality)
                     <div class="col-lg-6">
-                        <div class="latest-slider">
+                        <div class="latest-slider" >
                             <div class="slider-active">
                                 <!-- Single slider -->
+                                
                                 <div class="single-slider">
-                                    <div class="trending-top mb-30">
+                                    <div class="trending-top mb-30" style="width:100vh">
                                         <div class="trend-top-img text-center">
-                                            <img src="assets/img/gallery/latest-post.png" alt="">
-                                            <div class="trend-top-cap">
-                                                <span class="bgr" data-animation="fadeInUp" data-delay=".2s" data-duration="1000ms">Design</span>
-                                                <h2><a href="post_details.html" data-animation="fadeInUp" data-delay=".4s" data-duration="1000ms">Calling time on irresponsible junk food advertising to children</a></h2>
-                                            </div>
+                                            <img src="{{ asset('storage/'.$actuality->image) }}"  alt="..." style="width:100vh; height:50vh">
+                                            <center> <div class="trend-top-cap" style="width:77%; ">
+                                                <span class="bgr" data-animation="fadeInUp" data-delay=".2s" data-duration="1000ms">{{$actuality->categorie}}</span>
+                                                <h2><a href="" data-animation="fadeInUp" data-delay=".4s" data-duration="1000ms">{{$actuality->titre}}</a></h2>
+                                            </div> </center>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Single slider -->
-                                <div class="single-slider">
-                                    <div class="trending-top mb-30">
-                                        <div class="trend-top-img text-center">
-                                            <img src="assets/img/gallery/latest-post.png" alt="">
-                                            <div class="trend-top-cap">
-                                                <span class="bgr" data-animation="fadeInUp" data-delay=".2s" data-duration="1000ms">Design</span>
-                                                <h2><a href="post_details.html"  data-animation="fadeInUp" data-delay=".4s" data-duration="1000ms">Calling time on irresponsible junk food advertising to children</a></h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                               
+                               
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <!-- smoll items -->
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-6 col-md-6">
-                                <div class="single-baner-nw2 mb-30 ">
-                                    <div class="banner-img-cap2">
-                                        <div class="banner-img">
-                                            <img src="assets/img/gallery/latest-post2.png" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6">
-                                <div class="single-baner-nw2 mb-30">
-                                    <div class="banner-img-cap2">
-                                        <div class="banner-cap2 banner-cap3">
-                                            <p>Trending</p>
-                                           <h3><a href="post_details.html">The pomelo case: scope of plant variety rights in China</a></h3>
-                                            <p class="normal">Passion for their subjects from the subtleties of regional Thai home cooking to the intersection of food and queer culture.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6">
-                                <div class="single-baner-nw2 mb-30">
-                                    <div class="banner-img-cap2">
-                                        <div class="banner-cap2 banner-cap3">
-                                            <p>Technology</p>
-                                            <h3><a href="post_details.html">Valuable lessons to take away from COVID-19</a></h3>
-                                            <p  class="normal">Passion for their subjects from the subtleties of regional Thai home cooking to the intersection of food and queer culture.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6">
-                                <div class="single-baner-nw2 mb-30 ">
-                                    <div class="banner-img-cap2">
-                                        <div class="banner-img">
-                                            <img src="assets/img/gallery/latest-post02.png" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    @endforeach
+                    
                     </div>
+                    {{-- @foreach($actualities->slice(1, 2)  as $actuality)
                     <div class="col-lg-6">
                         <div class="single-baner-nw2 mb-30 text-center">
                             <div class="banner-img-cap2">
                                 <div class="banner-img">
-                                    <img src="assets/img/gallery/latest-post3.png" alt="">
+                                    <img src="{{ asset('storage/'.$actuality->image) }}" width="250px" alt="...">
                                 </div>
                                 <div class="banner-cap2">
-                                    <p>Technology</p>
-                                    <h3><a href="post_details.html">Calling time on irresponsible junk food advertising to children</a></h3>
+                                    <p>{{$actuality->categorie}}</p>
+                                    <h3><a href="post_details.html">{{$actuality->titre}}</a></h3>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="single-baner-nw2 mb-30 text-center">
-                            <div class="banner-img-cap2">
-                                <div class="banner-img">
-                                    <img src="assets/img/gallery/latest-post4.png" alt="">
-                                </div>
-                                <div class="banner-cap2">
-                                    <p>Design</p>
-                                    <h3><a href="post_details.html">Researchers control cattle microbiome  to reduce greenhouse gases</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach --}}
                 </div>
             </div>
         </div>
@@ -360,18 +211,23 @@
                 <div class="row justify-content-lg-between">
                     <div class="col-lg-8 col-md-8">
                         <!-- single-job-content -->
+                        @foreach($actualities as $actuality)
                         <div class="single-job-items mb-30">
                             <div class="job-items">
                                 <div class="company-img">
-                                    <a href="#"><img src="assets/img/gallery/top-psot1.png" alt=""></a>
+                                    <a href="#"><img src="{{ asset('storage/'.$actuality->image) }}" width="250px" alt="..."> </a>
+      
+                                   
+                                    
                                 </div>
                                 <div class="job-tittle">
-                                    <span>Trending</span>
-                                    <a href="post_details.html"><h4>The pomelo case: scope of plant variety rights in China</h4></a>
-                                    <p>We present things in a way that isn’t sensational, said Ms. Cham mavanijakul, 20, whose family has roots...</p>
+                                    <span>{{$actuality->actuality_cat->categorie}}</span>
+                                    <a href="post_details.html"><h4>{{$actuality->titre}}</h4></a>
+                                    <p>{{$actuality->description}}</p>
                                 </div>
                             </div>
                         </div>
+                        @endforeach
                         <!-- single-job-content -->
                         <div class="single-job-items mb-30">
                             <div class="job-items">
@@ -521,6 +377,12 @@
     </main>
     
 @include('awesomemagazine/layouts/footer')
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+ 
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Scripts -->
     
     </body>
 </html>

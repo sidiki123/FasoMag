@@ -15,6 +15,8 @@
                 </div>
             </div>
         </div>
+
+       
         <!-- breadcrumb End -->
         <!-- Top Posts Start -->
         <div class="top-post-area">
@@ -22,25 +24,32 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="section-tittle mb-35">
-                            <h2>Top Posts</h2>
+                            <h2>Top Posts -- Politique</h2>
                         </div>
                     </div>
                 </div>
+                
                 <div class="row justify-content-lg-between">
                     <div class="col-lg-8 col-md-8">
                         <!-- single-job-content -->
+                        @foreach($politiques as $actuality)
                         <div class="single-job-items mb-30">
                             <div class="job-items">
                                 <div class="company-img">
-                                    <a href="post_details.html"><img src="assets/img/gallery/top-psot1.png" alt=""></a>
+                                    <a href="#"><img src="{{ asset('storage/'.$actuality->image) }}" width="250px" alt="..."> </a>
+      
+                                   
+                                    
                                 </div>
                                 <div class="job-tittle">
-                                    <span>Trending</span>
-                                    <a href="post_details.html"><h4>The pomelo case: scope of plant variety rights in China</h4></a>
-                                    <p>We present things in a way that isn’t sensational, said Ms. Cham mavanijakul, 20, whose family has roots...</p>
+                                    <span>{{$actuality->actuality_cat->categorie}}</span>
+                                    <a href="post_details.html"><h4>{{$actuality->titre}}</h4></a>
+                                    <p>{{$actuality->description}}</p>
+                                    {{-- <p>{{$actuality->description = substr($actuality->description, 1, 6)}}</p> --}}
                                 </div>
                             </div>
                         </div>
+                        @endforeach
                         <!-- single-job-content -->
                         <div class="single-job-items mb-30">
                             <div class="job-items">

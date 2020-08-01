@@ -30,7 +30,7 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="about-details-cap">
-                        <h2>Calling time on irresponsible junk  food advertising to children</h2>
+                        <h2> value={{ $actuality->nom }} </h2>
                         </div>
                     </div>
                     <div class="col-lg-10">

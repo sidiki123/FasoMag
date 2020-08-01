@@ -1,38 +1,22 @@
-<?php
+<?php 
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-use App\Actuality;
 use App\Api;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
-
-
-class ActualitiesController extends Controller
+class ApiController extends Controller
 {
-    public function index()
-    {
-      return view('awesomemagazine/index', [
-        'actualities' => Actuality::all()
-    ]);
-    }
-
-    public function edit($id)
-    {
-      
-      $actuality = Actuality::find($id);
-     
-      return view('awesomemagazine/post_details', compact('actuality'));
-    }
-
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function displayNews(Request $request)
     {
         $response = $this->determineMethodHandler($request);
         $apiModel = new Api();
         $response['news'] = $apiModel->fetchNewsFromSource($response['sourceId']);
         $response['newsSources'] = $this->fetchAllNewsSources();
-        return view('awesomemagazine/index', [
-            'actualities' => Actuality::all()], $response);
+        return view('welcome', $response);
     }
     /**
      * @param $request
@@ -64,5 +48,4 @@ class ActualitiesController extends Controller
         });
         return $response;
     }
-   
 }

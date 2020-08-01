@@ -133,6 +133,11 @@ return [
     | this array to grant expanded functionality to your applications.
     |
     */
+    'url' => env('APP_URL', 'http://localhost'),
+    'news_api_url' => env('NEWS_API_URL', null),
+    'news_api_key' => env('NEWS_API_KEY', null),
+    'default_news_source' => env('DEFAULT_NEWS_SOURCE', 'CNN'),
+    'default_news_source_id' => env('DEFAULT_NEWS_SOURCE_ID', 'cnn'),
 
     'providers' => [
 
@@ -161,6 +166,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
+        App\Providers\HelperServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -226,6 +233,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'View' => Illuminate\Support\Facades\View::class,
+        'Helper' => App\Helpers\Helper::class,
 
     ],
 

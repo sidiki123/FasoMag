@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="{{asset('assets/css/slick.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/nice-select.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
 </head>
 <body>
     <!-- ? Preloader Start -->
@@ -59,7 +61,8 @@
                                 <div class="header-info-mid">
                                     <!-- logo -->
                                     <div class="logo">
-                                        <a href="{{URL('/')}}"><img src="assets/img/logo/logo.png" alt=""></a>
+                                        {{-- <a href="{{URL('/')}}"><img src="assets/img/logo/logo.png" alt=""></a> --}}
+                                        <a href="{{URL('/')}}"><img src="{{ asset('assets/FasoMagazine.png') }}" alt="..." width="300px"> </a>
                                     </div>
                                 </div>
                                 

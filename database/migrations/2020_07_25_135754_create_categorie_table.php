@@ -17,6 +17,7 @@ class CreateCategorieTable extends Migration
             $table->increments('idcategorie', true);
             $table->string('categorie');
             $table->integer('idActualities');
+            $table->integer('idabonne');
             $table->timestamps();
         });
     }

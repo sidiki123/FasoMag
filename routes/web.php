@@ -66,3 +66,13 @@ Route::group(['prefix' => 'admin'], function () {
 Route::resource('awesomemagazine/index', 'ActualitiesController');
 
 Route::get('/','ActualitiesController@index');
+// Route::resource('/sin-up','NewsController');
+Route::get('/sin-up', 'NewsController@index');
+Route::post('/sin-up', 'NewsController@store')->name('store');
+Route::get('/category/politique', 'PolitiqueController@index');
+
+Route::get('awesomemagazine/post_details', 'detailsController@index');
+Route::post('awesomemagazine/post_details', 'detailsController@edit');
+
+Route::get('/', 'ActualitiesController@displayNews');
+// Route::post('/sourceId', 'ApiController@displayNews');

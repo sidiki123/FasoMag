@@ -18,7 +18,7 @@ class CreateActualitiesTable extends Migration
             $table->string('titre');
             $table->string('description');
             $table->string('image');
-            $table->string('publication');
+            $table->date('publication');
             $table->integer('idcategorie')->length(10)->unsigned();
             $table->foreign('idcategorie')->references('idcategorie')->on('categorie');
             $table->timestamps();
