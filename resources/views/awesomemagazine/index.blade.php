@@ -289,6 +289,49 @@
                 </div>
             </div>
         </div>
+
+
+     <div id="appendDivNews">
+        <nav class="navbar text-center navbar-light bg-faded" style="background-color: #e3f2fd;">
+          <a class="navbar-brand" href="#">News Around the World</a>
+        </nav>
+
+            {{ csrf_field() }}
+<section id="content" class="section-dropdown">
+<p class="select-header"> Select a news source: </p>
+<label class="select"> 
+    <select name="news_sources" id="news_sources">
+    <option value="{{@$source_id}} : {{@$source_name}}">{{$source_name}}</option>
+    @foreach ($news_sources as $news_source)
+      <option value="{{$news_source['id']}} : {{$news_source['name'] }}">{{$news_source['name']}}</option>
+    @endforeach
+    </select>
+</label>
+
+ </section> 
+<p> News Source : {{$source_name}}</p>
+    <section class="news">
+    @foreach($news as $selected_news)
+    <article>
+        <img src="{{$selected_news['urlToImage']}}" alt="" />
+        <div class="text">
+            <h1>{{$selected_news['title']}}</h1>
+            <p style="font-size: 14px">{{$selected_news['description']}} <a href="{{$selected_news['url']}}" target="_blank"><small>read more...</small></a> </p>
+            <div style="padding-top: 5px;font-size: 12px">Author: {{$selected_news['author'] or "Unknown" }}</div>
+            @if($selected_news['publishedAt'] != null)
+             <div style="padding-top: 5px;">Date Published: {{ Carbon\Carbon::parse($selected_news['publishedAt'])->format('l jS \\of F Y ') }}</div>
+             @else
+             <div style="padding-top: 5px;">Date Published: Unknown</div>
+
+             @endif
+
+        </div>
+    </article>
+    @endforeach
+</section>
+</div>
+
+
         <!-- Top Posts End -->
         <!-- Latest Posts Area -->
         <div class="latest-posts pt-80 pb-80">
@@ -383,6 +426,12 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- Scripts -->
+
+<script src="{{asset('projets_realises/js/popper.js')}}"></script>
+<script src="{{asset('projets_realises/js/jquery.slim.min.js')}}"></script>
+<script src="{{asset('projets_realises/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('projets_realises/js/jquery.min.js')}}"></script>
+<script src="{{ asset('projets_realises/js/app.js') }}"></script>
     
     </body>
 </html>

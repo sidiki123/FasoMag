@@ -24,6 +24,10 @@
     <link rel="stylesheet" href="{{asset('assets/css/slick.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/nice-select.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('projets_realises/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('projets_realises/css/style.css')}}">
+    <link href="{{asset('projets_realises/css/pr.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('projets_realises/css/app.css') }}" rel="stylesheet">
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.js"></script>
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
 </head>

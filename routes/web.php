@@ -80,3 +80,8 @@ Route::post('awesomemagazine/post_details', 'detailsController@edit');
 
 Route::get('/', 'ActualitiesController@displayNews');
 // Route::post('/sourceId', 'ApiController@displayNews');
+
+
+
+Route::get('/', 'BusinessController@newsapi');
+Route::post('/source_id', 'BusinessController@newsapi');
