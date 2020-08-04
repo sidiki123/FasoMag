@@ -17,4 +17,9 @@ class Actuality extends Model
     {
         return $this->belongsTo(Categorie::class, 'idcategorie', 'idActualities');
     }
+
+    public function actuality_abonne()
+    {
+        return $this->belongsTo(Categorie::class, 'idabonne', 'idActualities');
+    }
 }

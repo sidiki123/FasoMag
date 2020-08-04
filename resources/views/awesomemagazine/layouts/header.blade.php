@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="{{asset('assets/css/slick.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/nice-select.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
 </head>
 <body>
     <!-- ? Preloader Start -->
@@ -59,7 +61,8 @@
                                 <div class="header-info-mid">
                                     <!-- logo -->
                                     <div class="logo">
-                                        <a href="{{URL('/')}}"><img src="assets/img/logo/logo.png" alt=""></a>
+                                        {{-- <a href="{{URL('/')}}"><img src="assets/img/logo/logo.png" alt=""></a> --}}
+                                        <a href="{{URL('/')}}"><img src="{{ asset('assets/FasoMagazine.png') }}" alt="..." width="300px"> </a>
                                     </div>
                                 </div>
                                 
@@ -89,10 +92,10 @@
                                     <nav>                                                
                                         <ul id="navigation">                                                                                                                                     
                                             <li><a href="{{URL('category/politique')}}">Politique</a></li>
-                                            <li><a href="{{URL('category/elements')}}">Economie</a></li>
-                                            <li><a href="{{URL('blog_details')}}">Société</a></li>
-                                            <li><a href="{{URL('sin-up')}}">Coopération</a></li>
-                                            <li><a href="{{URL('blog')}}">Culture</a></li>
+                                            <li><a href="{{URL('category/economie')}}">Economie</a></li>
+                                            <li><a href="{{URL('category/societe')}}">Société</a></li>
+                                            <li><a href="{{URL('category/cooperation')}}">Coopération</a></li>
+                                            <li><a href="{{URL('category/culture')}}">Culture</a></li>
                                             <!-- <li><a href="category.html">Harmful</a></li>
                                             <li><a href="category.html">Technology</a></li>
                                             <li><a href="category.html">Travel</a></li>

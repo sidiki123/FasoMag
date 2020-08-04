@@ -17,4 +17,9 @@ class Categorie extends Model
     {
         return $this->hasMany(Actuality::class, 'idcategorie', 'idActualities');
     }
+
+    public function categ_abonne()
+    {
+        return $this->belongsTo(Abonne::class, 'idcategorie', 'idabonne');
+    }
 }
